@@ -1,5 +1,7 @@
 //add everything here
+
 plugins {
+    id 'java'
     // id for library
     id 'java-library'
     // id for maven to publish jar to local repository
@@ -19,12 +21,13 @@ repositories {
 // provide repository, where required dependencies are located
 }
 
+
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'com.epam.demo'
-            artifactId = 'utils'
-            version = '0.0.1'
+            groupId = 'utils' as Publication
+            artifactId = 'stage2-build-tools-gradle' as Publication
+            version = '0.0.1' as Publication
 // provide groupId
 // provide artifactId
 // provide version
@@ -36,6 +39,8 @@ publishing {
 dependencies {
 // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
     implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.10'
+    implementation project(':utils')
+
 }
 
 test {

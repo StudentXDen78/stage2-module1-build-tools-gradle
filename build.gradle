@@ -1,5 +1,8 @@
+
+
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 subprojects {
@@ -7,5 +10,7 @@ subprojects {
 
     dependencies {
         testImplementation('org.junit.jupiter:junit-jupiter:5.8.1')
+        // implementation project(':utils')
+        // implementation project(':demo')
     }
 }
